@@ -80,23 +80,4 @@ public class StringPermutation
 			return pow;
 		
 	}
-	
-	public static int power2(int x, int n)
-	{
-		int low=0;
-		int high=n;
-		int mid=(low+high)/2;
-		
-		power2(x,mid);
-		power2()
-	}
-	public static int power2(int x, int n)
-	{
-		
-	}
-	
-	public static int powMerge()
-	{
-		
-	}
 }
