@@ -8,9 +8,12 @@ public class CompressString
 {
 	public static void main(String args[])
 	{
-		System.out.println(getCompressedString("abcde"));
+		System.out.println(getCompressedString("aabbccddeee"));
 		
 	}
+	
+	//Time Complexity: O(n) Space Complexity: O(k) where k is the number of distinct characters
+	//This algo can be done in O(1) space by using a String builder and keeping count of characters using a variable
 	public static String getCompressedString(String str)
 	{
 		Map<String,Integer> map=new HashMap<String,Integer>();
@@ -26,6 +29,10 @@ public class CompressString
 				map.put(String.valueOf(str.charAt(i)), 1);
 			}
 		}
+		//Check if the compression would result into a smaller string
+		if(map.size()*2>=str.length())
+			return str;
+		
 		Iterator itr=map.keySet().iterator();
 		StringBuilder s=new StringBuilder();
 		while(itr.hasNext())
@@ -34,10 +41,7 @@ public class CompressString
 			int value=map.get(key);
 			s.append(key).append(String.valueOf(value));
 		}
-		if(str.length()<s.length())
-			return str;
-		else
-			return s.toString();
+		return s.toString();
 	}
 
 }

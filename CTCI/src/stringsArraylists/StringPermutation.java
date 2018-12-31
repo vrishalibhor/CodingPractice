@@ -20,7 +20,7 @@ public class StringPermutation
 		System.out.println(isPermBetter(str1, str3));
 		System.out.println(isPermBetter(str3, str2));
 		System.out.println(isPermBetter(str1, str4));*/
-		System.out.println(power(5,3));
+		//System.out.println(power(5,3));
 	}
 	//Complexity: a log a+ b log b + (a) 
 	public static boolean isPermutation(String a, String b)

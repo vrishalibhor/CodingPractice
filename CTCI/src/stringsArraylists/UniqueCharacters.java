@@ -1,5 +1,6 @@
 package stringsArraylists;
 
+
 public class UniqueCharacters
 {
 	public static void main(String args[])
@@ -26,6 +27,7 @@ public class UniqueCharacters
 		}
 		return true;
 	}
+	
 	//Assuming string contains only ascii character set
 	//The time complexity for this method is O(n) where n is the length of the string
 	//The space complexity is O(1) since we've an array of size 128 always
