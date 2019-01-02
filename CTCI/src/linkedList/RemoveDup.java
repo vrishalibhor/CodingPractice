@@ -1,40 +1,58 @@
  package linkedList;
 
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.HashSet;
 
-class Node
-{
-	Node next;
-	Node prev;
-	int value;
-	
-	Node(int val)
-	{
-		this.value=val;
-	}
-}
 public class RemoveDup {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//List<ListNode> list=new LinkedList<Node>();
+		Node head=new Node(1);
+		Node n2=new Node(2);
+		Node n3=new Node(3);
+		Node n4=new Node(1);
+		Node n5=new Node(4);
+		Node n6=new Node(1);
+		
+		/*head.next=n2;
+		n2.next=n3;
+		n3.next=n4;
+		n4.next=n5;
+		n5.next=n6;*/
+		
+		head.next=n4;
+		n4.next=n6;
+		
+		displayLinkedList(head);
+		noDupsList(head);
+		displayLinkedList(head);
 	}
 
-	public static void noDupsList(LinkedList list)
+	public static void noDupsList(Node head)
 	{
-		Hashtable table=new Hashtable();
-		ListIterator<Integer> itr=list.listIterator();
-		while(itr.hasNext())
+		HashSet<Integer> set=new HashSet<Integer>();
+		Node prev=null;
+		Node current=head;
+		while(current!=null)
 		{
-			Object current=itr.next();
-			if(table.contains(current))
+			if(set.contains(current.value))
 			{
-				//itr.previousIndex().
+				prev.next=current.next;
 			}
+			else
+			{
+				set.add(current.value);
+				prev=current;
+			}
+			current=current.next;
 		}
-		
+	}
+	
+	public static void displayLinkedList(Node head)
+	{
+		while(head!=null)
+		{
+			System.out.print(head.value+" -> ");
+			head=head.next;
+		}
+		System.out.println("NULL");
 	}
 }

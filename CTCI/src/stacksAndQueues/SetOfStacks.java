@@ -7,7 +7,6 @@ public class SetOfStacks {
 
 	ArrayList<MyStack> listOfStack;
 	int currentStack;
-	
 	SetOfStacks(int size, int number)
 	{
 		listOfStack=new ArrayList<MyStack>();
@@ -17,7 +16,6 @@ public class SetOfStacks {
 		}
 		currentStack=0;
 	}
-	
 	public void push(int item)
 	{
 		boolean pushed=false;
@@ -31,18 +29,15 @@ public class SetOfStacks {
 				break;
 			}
 		}
-		
 		for(int i=0;i<listOfStack.size();i++)
 		{
 			System.out.println("Currently printing "+i+" "+Arrays.toString(listOfStack.get(i).getArr()));
 		}
-		
 		if(!pushed)
 		{
 			throw(new StackOverflowError("Overflow"));
 		}
 	}
-	
 	public int pop()
 	{
 		try

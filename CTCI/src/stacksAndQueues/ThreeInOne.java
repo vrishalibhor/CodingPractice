@@ -1,7 +1,6 @@
 package stacksAndQueues;
 
 class MyStack1 {
-	
 	int arr[];
 	int start;
 	int end;
@@ -14,7 +13,6 @@ class MyStack1 {
 		this.end=end;
 		this.top=this.start-1;
 	}
-	
 	public void push(int item)
 	{
 		if(top<end)
@@ -26,7 +24,6 @@ class MyStack1 {
 			System.out.println("Stack overflow");
 		}
 	}
-	
 	public int pop()
 	{
 		if(top>=start)

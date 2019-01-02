@@ -1,9 +1,9 @@
 package stacksAndQueues;
 
-public class Cat extends Animal
-{
-	Cat(String name) 
-	{
+public class Cat extends Animal{
+
+	public Cat(String name) {
 		super(name);
 	}
+
 }
