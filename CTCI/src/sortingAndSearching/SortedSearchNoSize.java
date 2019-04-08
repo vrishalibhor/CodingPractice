@@ -18,14 +18,14 @@ class Listy
 	}
 }
 
-public class GroupSortedSearch {
+public class SortedSearchNoSize {
 
 	public static void main(String args[])
 	{
 		int arr[]= {1,2,8,11,12,13,16,18,20,21};
 		Listy list=new Listy(arr);
 		int high=getSize(list);
-		System.out.println(modifiedBinarySearch(list,13,0,9));
+		System.out.println(modifiedBinarySearch(list,13,0,high));
 		display(list.arr);
 
 	}

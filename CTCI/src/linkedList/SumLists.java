@@ -2,6 +2,41 @@ package linkedList;
 
 public class SumLists {
 
+	public static Node addTwoNumbers(Node l1, Node l2) {
+		int carry=0;
+		Node head=null, current=null;
+
+		while(l1!=null || l2!=null || carry!=0)
+		{
+			// System.out.println(head);
+			int sum = (l1==null ? 0 : l1.value) + (l2==null ? 0 : l2.value) + carry;
+			if(sum>9)
+			{
+				carry=sum/10;
+				sum=sum%10;
+			}
+			else
+			{
+				carry=0;
+			}
+
+			Node node=new Node(sum);
+			System.out.println("Created "+node.value);
+			if(head==null)
+			{
+				head=current=node;
+			}
+			else	{
+				current.next=node;
+				current=current.next;
+			}
+
+			if(l1!=null) l1=l1.next;
+			if(l2!=null) l2=l2.next;
+		}
+		return head;
+	}
+
 	public static Node getSumLists(Node head1, Node head2)
 	{
 		Node head=null,current=null;
@@ -98,8 +133,14 @@ public class SumLists {
 
 		displayLinkedList(head1);
 		displayLinkedList(head2);
-		Node head=getSumLists(head1,head2);
+		Node head=addTwoNumbers(head1,head2);
 		displayLinkedList(head);
+
+		Node head11=new Node(0);
+		Node head12=new Node(0);
+		Node h=addTwoNumbers(head11,head12);
+		displayLinkedList(h);
+
 	}
 	public static void displayLinkedList(Node head)
 	{

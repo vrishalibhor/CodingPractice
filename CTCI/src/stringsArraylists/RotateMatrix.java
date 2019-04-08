@@ -10,30 +10,33 @@ public class RotateMatrix
 							{10,9,8,7}};
 		
 		display(matrix);
-		rotate90(matrix);
+//		rotate90(matrix);
+//		display(matrix);
+
+//10	11	12	1	
+//9	16	13	2	
+//8	15	14	3	
+//7	6	5	4	
+
+		rotate90Better(matrix);
 		display(matrix);
 	}
 	
-	/*public static boolean rotate90Better(int matrix[][])
+	public static void rotate90Better(int matrix[][])
 	{
-		if(matrix.length!=matrix[0].length)
-			return false;
-		
-		int size=matrix.length;
-		
-		for(int layer=0;layer<size/2;layer++)
+		int size=matrix.length-1;
+		for(int level=0;level<(matrix.length+1)/2;level++)
 		{
-			int first=layer;
-			int last=size-1-layer;
-			
-			for(int i=first;i<last;i++)
+			for(int i=level;i<size-level;i++)
 			{
-				int temp=matrix[first][i];
-				
-				matrix[first][i]=matrix[last][layer];
+				int temp=matrix[level][i]; //Save top
+				matrix[level][i]=matrix[size-i][level]; //Left to top
+				matrix[size-i][level]=matrix[size-level][size-i]; //Bottom to left
+				matrix[size-level][size-i]=matrix[i][size-level]; //Right to bottom
+				matrix[i][size-level]=temp; //Saved top to right
 			}
 		}
-	}*/
+	}
 	
 	public static void rotate90(int matrix[][])
 	{
@@ -73,8 +76,8 @@ public class RotateMatrix
 				matrix[j][m-1-layer]=temp[j];
 			}
 			
-			System.out.println("Layer "+layer);
-			display(matrix);
+			//System.out.println("Layer "+layer);
+			//display(matrix);
 		}
 	}
 	public static void display(int arr[][])

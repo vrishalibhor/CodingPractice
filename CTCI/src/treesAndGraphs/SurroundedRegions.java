@@ -8,6 +8,7 @@ public class SurroundedRegions {
 
 	public static void surroundedRegions(char grid[][])
 	{
+		 if(grid==null || grid.length==0) return;
 		for(int row=0;row<grid.length;row++)
 		{
 			if(grid[row][0]=='O')

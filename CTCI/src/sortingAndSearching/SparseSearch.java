@@ -4,7 +4,7 @@ public class SparseSearch {
 
 	public static void main(String args[])
 	{
-		String arr[]= {"at","","","","ball","","","car","","","dad","",""};
+		String arr[]= {"at","","","","ball","","","","car","","","dad","",""};
 		System.out.println(modifiedBinary(arr,0,12,"dad"));
 	}
 	
@@ -23,6 +23,8 @@ public class SparseSearch {
 					return midLeft;
 				if(midRight<arr.length && arr[midRight].length()!=0)
 					return midRight;
+				midLeft--;
+				midRight++;
 			}
 			
 		}

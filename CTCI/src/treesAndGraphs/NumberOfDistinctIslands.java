@@ -48,13 +48,22 @@ public class NumberOfDistinctIslands {
 		return result.size();
 	}
 	public static void main(String[] args) {
-		int grid[][]= {	{1,1,0,1,1},
-						{1,0,0,0,0},
-						{0,0,0,0,1},
-						{1,1,0,1,1}};
+//		int grid[][]= {	{1,1,0,1,1},
+//						{1,0,0,0,0},
+//						{0,0,0,0,1},
+//						{1,1,0,1,1}};
+//
+//		System.out.println(countDistinctIslands(grid));
+		Character ch=' ';
 
-		System.out.println(countDistinctIslands(grid));
-
+		if(!Character.isLetter(ch) || Character.isWhitespace(ch))
+		{
+			System.out.println("not a letter or whitespace");
+		}	
+		else
+		{
+			System.out.println("is a letter or whitespace");
+		}
 	}
 
 }

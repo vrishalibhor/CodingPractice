@@ -4,10 +4,53 @@ public class OneAway {
 
 	public static void main(String[] args) 
 	{
-		/*System.out.println(oneAway("pale","ple"));
-		System.out.println(oneAway("pales","pale"));
-		System.out.println(oneAway("pale","bale"));*/
-		System.out.println(oneAway("pale","ball"));
+		System.out.println(oneAwayBetter("adb","Adb"));
+		System.out.println(oneAwayBetter("pales","pale"));
+		System.out.println(oneAwayBetter("pale","bale"));
+		System.out.println(oneAwayBetter("pale","ball"));
+	}
+	
+	public static boolean oneAwayBetter(String s1, String s2)
+	{
+		int l1=s1.length();
+		int l2=s2.length();
+				
+		if(Math.abs(l1-l2)>1)
+			return false;
+		
+		int i=0,j=0;
+		boolean diffFound=false;
+		
+		while(i<l1 && j<l2)
+		{
+			if(s1.charAt(i)!=s2.charAt(j))
+			{
+				if(!diffFound)
+				{
+					if(l1==l2) //replace case
+					{
+						i++; j++;
+					}
+					else if(l1<l2)
+					{
+						j++;
+					}
+					else
+					{
+						i++;
+					}
+					diffFound=true;
+				}
+				else
+					return false;
+			}
+			else
+			{
+				i++;
+				j++;
+			}
+		}
+		return true;
 	}
 	
 	public static boolean oneAway(String s1, String s2)

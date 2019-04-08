@@ -39,6 +39,7 @@ public class GroupAnagrams {
 		}
 		int k=0;
 		for(String key: map.keySet())
+		
 		{
 			ArrayList<String> list=map.get(key);
 			for(int i=0;i<list.size();i++)
